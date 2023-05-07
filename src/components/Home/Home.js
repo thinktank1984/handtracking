@@ -1,13 +1,17 @@
-import React from 'react';
-import './Home.css';
+import MPHands from '../HandTracker/HandSkeleton';
 
-const Home = () =>{
-    return(
-        <div className="home-container">
-            <h1>Welcome to the Hand Tracking App!</h1>
-        </div>
-        
-    );
+import React from "react";
+// import MPFaceMesh from "./components/MPFaceMesh";
+// import MPHolistic from "./components/MPHolistic";
+// import MPSelfieSegmentation from "./components/MPSelfieSegmentation";
+
+function App() {
+   return (
+      <div>
+         <MPHands />
+
+      </div>
+   );
 }
 
-export default Home;
+export default App;
