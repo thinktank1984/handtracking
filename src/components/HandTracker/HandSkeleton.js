@@ -7,7 +7,7 @@ import {
 } from "@mediapipe/drawing_utils/drawing_utils";
 import { Camera } from "@mediapipe/camera_utils/camera_utils";
 
-const MPHands = () => {
+const MPHands2 = () => {
    const webcamRef = useRef(null);
    const canvasRef = useRef(null);
 
@@ -108,4 +108,4 @@ const MPHands = () => {
    );
 };
 
-export default MPHands;
+export default MPHands2;
