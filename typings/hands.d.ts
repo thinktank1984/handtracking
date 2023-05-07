@@ -1,4 +1,4 @@
-declare module "@mediapipe/hands" {
+declare module "@mediapipe/hands/hands" {
    export class Hands {
       constructor(options?: HandsOptions);
       onResults: (results: HandsResult[]) => void;
@@ -26,4 +26,6 @@ declare module "@mediapipe/hands" {
          z: number
       }[]
    }
+   export const HAND_CONNECTIONS: ReadonlyArray<[number, number]>;
+
 }
