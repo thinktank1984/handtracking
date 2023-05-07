@@ -3,6 +3,7 @@ declare module "@mediapipe/hands/hands" {
       constructor(options?: HandsOptions);
       onResults: (results: HandsResult[]) => void;
       setOptions(options: HandsOptions): void;
+      static readonly VERSION: string;
       static readonly Solutions: {
          HANDS: string;
       }
