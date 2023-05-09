@@ -1,14 +1,21 @@
 declare module "@mediapipe/drawing_utils/drawing_utils" {
    export function drawConnectors(
+      ctx: CanvasRenderingContext2D,
       landmarks: number[][],
       connections: ReadonlyArray<[number, number]>,
-      ctx: CanvasRenderingContext2D,
-      options?: { color?: string; lineWidth?: number }
+      options?: {
+         color?: string;
+         lineWidth?: number
+      }
    ): void;
 
    export function drawLandmarks(
-      landmarks: number[][],
       ctx: CanvasRenderingContext2D,
-      options?: { color?: string; fillColor?: string; radius?: number }
+      landmarks: number[][],
+      
+      options?: {
+         color?: string;
+         lineWidth?: number
+      }
    ): void;
 }

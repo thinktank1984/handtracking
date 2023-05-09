@@ -1,19 +1,27 @@
 declare module "@mediapipe/camera_utils/camera_utils" {
-   export function computeCameraIntrinsicsFromMatrix(matrix: number[][]): {
-      focalLength: ReadonlyArray<number>;
-      principalPoint: ReadonlyArray<number>;
-      imageDimension: ReadonlyArray<number>;
-      radialDistortion: ReadonlyArray<number>;
-      tangentialDistortion: ReadonlyArray<number>;
-   };
-   export class Camera {
-      constructor(focalLength: number[], principalPoint: number[], imageDimension: number[]);
-      projectPoint(pt: number[], rtMatrix: number[][]): number[];
-      getImageSize(): number[];
+   export interface CameraOptions {
+      onFrame?: () => Promise<void>;
+      width?: number;
+      height?: number;
    }
-   export function computeRotation(angle: number, axis: number[]): number[][];
 
-   export function computeTranslation(t: number[]): number[][];
-
-   export function transformPoint(pt: number[], matrix: number[][]): number[];
+   export class Camera {
+      constructor(video: HTMLVideoElement, options?: CameraOptions);
+      start(): void;
+      stop(): void;
+   }
 }
+
+
+/*
+         const camera = new Camera(
+            this.webcamRef.current.video as HTMLVideoElement,
+            {
+               onFrame: async () => {
+                  await hands.send({ image: this.webcamRef.current?.video });
+               },
+            width: 1280,
+            height: 720,
+            });
+
+*/
